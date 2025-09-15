@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import router from './app-routes/routes.js'
 const app = express();
 
 //middlewares
@@ -20,7 +21,7 @@ app.get('/health', (req, res) => {
 
 
 
-// app.use('/', auth);
+app.use('/api', router);
 
 const port = 3000;
 app.listen(port, () => {
